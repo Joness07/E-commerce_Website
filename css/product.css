@@ -1,0 +1,10 @@
+.main-product {
+    display: flex;
+}
+
+.shop-title {
+    text-align: center;
+    padding-top: 30px;
+    color: #000;
+    font-family: 'Rubik', sans-serif
+}
