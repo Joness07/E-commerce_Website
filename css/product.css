@@ -36,12 +36,22 @@
 
 .product-inner-box {
     background: #b0b0b0;
+    cursor: pointer;
+    object-fit: cover;
+    width: 13rem;
+    height: 13rem;
+}
+
+.product-inner-box:hover {
+    background: #b0b0b0;
+    object-fit: contain;
     width: 13rem;
     height: 13rem;
 }
 
 .product-outer-box {
     text-align: left;
+    user-select: none;
     /* width: 14rem; */
     /* height: 13rem; */
 }
