@@ -47,6 +47,10 @@
     padding-bottom: 5px;
 }
 
+.product-price {
+    color:#616161;
+}
+
 .product-inner-box {
     background: #b0b0b0;
     cursor: pointer;

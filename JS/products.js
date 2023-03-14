@@ -30,15 +30,19 @@ function displayProducts() {
             const productOuterBox = document.createElement("div");
             const productInnerBox = document.createElement("img");
             const productName = document.createElement("p");
+            const productPrice = document.createElement("p");
             // const productDesc = document.createElement("p");
             productsParent.appendChild(productOuterBox);
             productOuterBox.appendChild(productInnerBox);
             productOuterBox.appendChild(productName);
+            productOuterBox.appendChild(productPrice);
     
             productOuterBox.classList.add("product-outer-box");
             productInnerBox.classList.add("product-inner-box");
+            productPrice.classList.add("product-price");
             productInnerBox.src = "../images/" + product.image;
             productName.textContent = product.name;
+            productPrice.textContent = "£" + product.price;
         }
     });
 }
