@@ -1,24 +1,48 @@
 const productsParent = document.querySelector(".all-products");
+const categories = document.querySelector(".categories");
+const products = data.products;
+const filters = [];
 
+categories.addEventListener("click", addFilter)
 displayProducts();
 
-async function displayProducts() {
-    const products = data.products;
+function addFilter(event) {
+    removeProducts();
+    const isCategoryBtn = event.target.classList.contains('category');
+    const category = event.target.textContent;
 
+    if (isCategoryBtn) {
+        if (!filters.includes(category)) {
+            filters.push(category);
+            event.target.classList.add("pressed");
+        } else {
+            filters.splice(filters.indexOf(category), 1);
+            event.target.classList.remove("pressed");
+        }
+    }
+
+    displayProducts();
+}
+
+function displayProducts() {
     products.forEach(product => {
-        const productOuterBox = document.createElement("div");
-        const productInnerBox = document.createElement("img");
-        const productName = document.createElement("p");
-        // const productDesc = document.createElement("p");
-        productsParent.appendChild(productOuterBox);
-        productOuterBox.appendChild(productInnerBox);
-        productOuterBox.appendChild(productName);
-
-        productOuterBox.classList.add("product-outer-box");
-        productInnerBox.classList.add("product-inner-box");
-        productInnerBox.src = "../images/" + product.image;
-        productName.textContent = product.name;
+        if (filters.includes(product.category.toString()) || filters.length === 0) {
+            const productOuterBox = document.createElement("div");
+            const productInnerBox = document.createElement("img");
+            const productName = document.createElement("p");
+            // const productDesc = document.createElement("p");
+            productsParent.appendChild(productOuterBox);
+            productOuterBox.appendChild(productInnerBox);
+            productOuterBox.appendChild(productName);
     
+            productOuterBox.classList.add("product-outer-box");
+            productInnerBox.classList.add("product-inner-box");
+            productInnerBox.src = "../images/" + product.image;
+            productName.textContent = product.name;
+        }
     });
+}
 
+function removeProducts() {
+    productsParent.innerHTML = "";
 }

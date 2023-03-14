@@ -28,6 +28,19 @@
     width: 15%;
 }
 
+
+.category {
+    cursor: pointer;
+    padding: 5px 15px;
+    margin: 4px 0;
+    border: 2px solid #b0b0b0;
+    border-radius: 1rem;
+}
+
+.categories .pressed {
+    background: #d0d0d0
+}
+
 .categories h3 {
     font-size: 1.3rem;
     font-weight: 500;
