@@ -9,7 +9,7 @@ displayProducts();
 function addFilter(event) {
     removeProducts();
     const isCategoryBtn = event.target.classList.contains('category');
-    const category = event.target.textContent;
+    const category = event.target.textContent.toLowerCase();
 
     if (isCategoryBtn) {
         if (!filters.includes(category)) {
