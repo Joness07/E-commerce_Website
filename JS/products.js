@@ -119,6 +119,12 @@ function updateBasket() {
         cartItem.appendChild(cartItemRemoveBtn);
 
         cartItemsContainer.appendChild(cartItem);
+
+        // Event listener for remove button
+        cartItemRemoveBtn.addEventListener("click", () => {
+            basket = basket.filter(item => item !== product);
+            updateBasket();
+        })
     });
 
     // Update the cart total price
@@ -128,41 +134,42 @@ function updateBasket() {
     cartTotalPrice.textContent = '£' + totalPrice.toFixed(2);
 
     // Add event listeners to remove buttons
-    const removeButtons = document.querySelectorAll('.cart-item-remove');
-    removeButtons.forEach(button => {
-        button.addEventListener('click', event => {
-            const itemName = event.target.previousSibling.previousSibling.textContent;
-            basket = basket.filter(product => product.name !== itemName);
-            updateBasket();
-        });
-    });
+    // const removeButtons = document.querySelectorAll('.cart-item-remove');
+    // removeButtons.forEach(button => {
+    //     button.addEventListener('click', event => {
+    //         const itemName = event.target.previousSibling.previousSibling.textContent;
+    //         basket = basket.filter(product => product.name !== itemName);
+    //         updateBasket();
+    //     });
+    // });
 }
 
 
-document.addEventListener('click', event => {
-    if (event.target.classList.contains('cart-item-remove')) {
-        const itemName = event.target.previousSibling.previousSibling.textContent;
-        basket = basket.filter(product => product.name !== itemName);
-        updateBasket();
-    }
-});
+// document.addEventListener('click', event => {
+//     if (event.target.classList.contains('cart-item-remove')) {
+//         const itemName = event.target.previousSibling.previousSibling.textContent;
+//         basket = basket.filter(product => product.name !== itemName);
+//         updateBasket();
+//     }
+// });
 
 
-addToCartBtn.addEventListener('click', () => {
-    const selectedProduct = {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        quantity: 1 // initialize quantity to 1 for new items
-    };
-    const index = basket.findIndex(item => item.id === selectedProduct.id);
-    if (index !== -1) {
-        basket[index].quantity++; // increase quantity if item already exists
-    } else {
-        basket.push(selectedProduct); // add new item to basket
-    }
-    updateBasket();
-});
+// addToCartBtn.addEventListener('click', () => {
+//     console.log("add to cart");
+//     const selectedProduct = {
+//         id: product.id,
+//         name: product.name,
+//         price: product.price,
+//         quantity: 1 // initialize quantity to 1 for new items
+//     };
+//     const index = basket.findIndex(item => item.id === selectedProduct.id);
+//     if (index !== -1) {
+//         basket[index].quantity++; // increase quantity if item already exists
+//     } else {
+//         basket.push(selectedProduct); // add new item to basket
+//     }
+//     updateBasket();
+// });
 
 
 function removeItem(itemId) {
