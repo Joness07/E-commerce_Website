@@ -34,11 +34,12 @@
     padding: 5px 15px;
     margin: 4px 0;
     border: 2px solid #181717;
+    background: #ffffff;
     border-radius: 1rem;
 }
 
 .categories .pressed {
-    background: #ffffff
+    background: linear-gradient(to bottom right, #f7cbeb, #c1ddf4);
 }
 
 .categories h3 {
