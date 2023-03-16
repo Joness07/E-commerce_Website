@@ -132,27 +132,7 @@ function updateBasket() {
         return acc + product.price;
     }, 0);
     cartTotalPrice.textContent = '£' + totalPrice.toFixed(2);
-
-    // Add event listeners to remove buttons
-    // const removeButtons = document.querySelectorAll('.cart-item-remove');
-    // removeButtons.forEach(button => {
-    //     button.addEventListener('click', event => {
-    //         const itemName = event.target.previousSibling.previousSibling.textContent;
-    //         basket = basket.filter(product => product.name !== itemName);
-    //         updateBasket();
-    //     });
-    // });
 }
-
-
-// document.addEventListener('click', event => {
-//     if (event.target.classList.contains('cart-item-remove')) {
-//         const itemName = event.target.previousSibling.previousSibling.textContent;
-//         basket = basket.filter(product => product.name !== itemName);
-//         updateBasket();
-//     }
-// });
-
 
 // addToCartBtn.addEventListener('click', () => {
 //     console.log("add to cart");
