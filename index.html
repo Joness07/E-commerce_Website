@@ -8,49 +8,74 @@
     <title>DevWear</title>
     <!-- CSS Styles-->
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/header-footer.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script src="./data/productData.js" defer></script>
+    <script src="./JS/products.js" defer></script>
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="main-logo">
-            <a href="index.html"><img src="./images/TEMP-LOGO.png" alt="LOGO"></a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">HOME</li></a>
-                <li><a href="./pages/product.html">PRODUCTS</li></a>
-                <li><a href="#">ABOUT US</li></a>
-            </ul>
-        </nav>
-        <div class="main-search">
-            <form action="" method="get" class="search-bar">
-                <input type="text" placeholder="Search for products" name="q">
-                <button type="submit"><img src="./images/Search-black.png"></button>
-            </form>
-        </div>
-        <div class="main-cart">
-            <a href="#"><img src="./images/SHOPBAG.png" alt="Shopping Bag"></a>
+    <header>
+        <div class="navbar-center">
+            <div class="logo">
+                <img src="Images\logoTitle.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./pages/m-product.html">PRODUCTS</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <div class="cart-btn">
+                    <a href="#"><img src="Images\cartIcon.png" alt="Shopping Cart">
+                        <span class="cart-items">0</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
-    <main>
-        <h2>
-            MENS COLLECTION 2023
-        </h2>
-        <h1>
-            WINTER COATS SALE
-        </h1>
-        <p>
-            Stay warm and stylish this winter with our collection of men's coats! From classic wool coats to trendy puffer jackets, we've got you covered.
-        </p>
- homepage
-        <a href="./pages/product.html">
-            <button>
-                Go To Store
-            </button>
-        </a>
+    <div class="cart-sidebar">
+        <button class="cart-close-button">&times;</button>
+        <h3>Shopping Basket</h3>
+        <div class="cart-items-container">
+            <!-- Here goes the list of cart items -->
+        </div>
+        <div class="cart-total-container">
+            <p>Total:</p>
+            <p class="cart-total-price">$0.00</p>
+        </div>
+        <div class="cart-buttons-container">
+            <button class="cart-remove-all-button">Remove all items</button>
+            <button class="cart-checkout-button">Checkout</button>
+        </div>
+    </div>
 
-    </main>
+    <div class="container">
+        <div class="banner">
+            <p>WINTER SALE: USE CODE "WINTER10" FOR 10% OFF &nbsp &nbsp &nbsp WINTER SALE: USE CODE "WINTER10" FOR 10%
+                OFF &nbsp &nbsp &nbsp WINTER SALE: USE CODE "WINTER10" FOR 10% OFF &nbsp &nbsp &nbsp WINTER SALE: USE
+                CODE "WINTER10" FOR 10% OFF</p>
+        </div>
+        <div class="content">
+            <h2>Mens Collection 2023</h2>
+            <h1>Winter Coats<br>Sale</h1>
+            <p>Stay warm and stylish this winter with our collection of<br> men's coats! From classic wool coats to
+                trendy puffer<br> jackets, we've got you covered.</p>
+            <button class="button">Go To Shop <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <img src="images/img4.png" class="feature-img">
+    </div>
 
 </body>
 
